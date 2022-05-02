@@ -33,7 +33,7 @@ def delete():
   mysql.connection.commit()
   return '{"Result":"Success"}'
  
- @app.route("/update") #Update Student
+@app.route("/update") #Update Student
 def update():
   name = request.args.get('name')
   email = request.args.get('email')
