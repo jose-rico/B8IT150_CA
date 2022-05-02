@@ -34,11 +34,16 @@ This is where the results turn up: <br/>
 <tr><td>ID</td><td>Name</td><td>Email</td></tr>
 </table>
 <BR/>
-
+<!--Adding records-->
+<label for="id">NEW: </label><input type="text" id="name" width="20" value="name">
+<input type="text" id="email" width="20" value="email">
+<button id='adlb'>Add</button>
+<BR/>
+<!--Deleting records-->
 <label for="id">ID: </label><input type="text" id="id" width="20" value="-1">
 <button id='delb'>Delete</button>
 <BR/>
-
+<!--Updating records-->
 <label for="id">Email: </label><input type="text" id="email" width="20" value="-1">
 <button id='updb'>Update</button>
 
@@ -52,7 +57,19 @@ fetch(baseURL+'delete?id='+id).then((resp)=>{
 alert("Student Deleted");//Obviously check success first
 });
 }
-
 delButton.addEventListener("click", deleteStudent);
 </script>
+<script>
+aseURL='https://jose.dbsprojects.ie:8080/';
+let addButton=document.getElementById('adlb');
+let name=document.getElementById('name');
+let email=document.getElementById('email');
+let addStudent=()=>{        
+fetch(baseURL+'add?name='+document.getElementById('name').value+'&email='+document.getElementById('email').value).then((resp)=>{alert("Student Added");
+      }
+    );
+  }
+addButton.addEventListener("click", addStudent);
+
+</script
 </html>
