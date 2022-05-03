@@ -79,7 +79,7 @@ addButton.addEventListener("click", addStudent);
 <script>
 baseURL='https://jose.dbsprojects.ie:8080/';
 let updStudent =()=>{        
-fetch(baseURL+'update?id='+id.value+'&name='+name.value+'&name='+email.value+'&email=').then((resp)=>{alert("Student Updated");}
+fetch(baseURL+'update?id='+id.value+'&name='+name.value+'&email='+email.value).then((resp)=>{alert("Student Updated");}
 );}
 </script>
 
