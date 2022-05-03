@@ -44,9 +44,9 @@ This is where the results turn up: <br/>
 <button id='delb'>Delete</button>
 <BR/>
 <!--Updating records-->
-<label for="updid">Update: </label><input type="text" id="updid" width="20" name="updid">
-<input type="text" id="updname" width="20" name="updname">
-<input type="text" id="updemail" width="20" name="updemail">
+<label for="id">Update: </label><input type="text" id="id" width="20" name="id">
+<input type="text" id="name" width="20" name="name">
+<input type="text" id="email" width="20" name="email">
 <button onClick="updStudent()">Update</button>
 
 </body>
@@ -75,14 +75,14 @@ fetch(baseURL+'add?name='+document.getElementById('name').value+'&email='+docume
   }
 addButton.addEventListener("click", addStudent);
 </script>
-<!--Script updating records
+Script updating records
 <script>
 baseURL='https://jose.dbsprojects.ie:8080/';
 
 let updStudent =()=>{        
-fetch(baseURL+'update?id='+updid.value+'&name'+updname.value+'&email='+updemail.value).then((resp)=>{alert("Student Updated");}
+fetch(baseURL+'update?id='+id.value+'&name='+name.value+'&email='+email.value).then((resp)=>{alert("Student Updated");}
 );}
-</script>-->
+</script>
 
 
 
