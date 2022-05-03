@@ -77,9 +77,7 @@ addButton.addEventListener("click", addStudent);
 baseURL='https://jose.dbsprojects.ie:8080/';
 let updButton=document.getElementById('updb');
 let id=document.getElementById('id');
-let name=document.getElementById('name');
-let email=document.getElementById('email');
-let updStudent=()=>{        
+let updateStudent=()=>{        
 fetch(baseURL+'update?id='+document.getElementById('id').value+document.getElementById('name').value+'&email='+document.getElementById('email').value).then((resp)=>{alert("Student Updated");
       }
     );
