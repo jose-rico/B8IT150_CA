@@ -54,7 +54,7 @@ def hello(): # Name of the method
   for row in rv: #Format the Output Results and add to return string
     Result={}
     print(row)
-    Result['Name']=row[0].replace('\n',' ')
+    Result['Name']=row[0]
     Result['Email']=row[1]
     Result['ID']=row[2]
     Results.append(Result)
