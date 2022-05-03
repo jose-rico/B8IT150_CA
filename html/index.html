@@ -44,10 +44,13 @@ This is where the results turn up: <br/>
 <button id='delb'>Delete</button>
 <BR/>
 <!--Updating records-->
-<label for="id">Update: </label><input type="text" id="uid" width="20" name="uid">
-<input type="text" id="uname" width="20" name="uname">
-<input type="text" id="uemail" width="20" name="uemail">
-<button onClick="updStudent()">Update</button>
+<label for='updateID'>Type Id number to update</label>
+<input type="text" name="updateID" id="updateID">
+<label for='updateName'>Enter a new name</label>
+<input type="text" name="updateName" id="updateName">
+<label for='updateEmail'>Enter a new email</label>
+<input type="text" name="updateEmail" id="updateEmail">
+<button onClick="updateStudent()"> Click to update </button>
 
 </body>
 <!--Script deleting records-->
@@ -64,7 +67,7 @@ delButton.addEventListener("click", deleteStudent);
 </script>
 <!--Script adding records-->
 <script>
-aseURL='https://jose.dbsprojects.ie:8080/';
+baseURL='https://jose.dbsprojects.ie:8080/';
 let addButton=document.getElementById('adlb');
 let name=document.getElementById('name');
 let email=document.getElementById('email');
@@ -78,9 +81,8 @@ addButton.addEventListener("click", addStudent);
 Script updating records
 <script>
 baseURL='https://jose.dbsprojects.ie:8080/';
-
-let updStudent =()=>{        
-fetch(baseURL+'update?id='+uid.value+'&name='+uname.value+'&email='+uemail.value).then((resp)=>{alert("Student Updated");}
+let updateStudent =()=>{        
+fetch(baseURL+'update?id='+updateID.value+'&name='+updateName.value+'&email='+updateEmail.value).then((resp)=>{alert("Student Updated");}
 );}
 </script>
 
