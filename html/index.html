@@ -45,8 +45,8 @@ This is where the results turn up: <br/>
 <BR/>
 <!--Updating records-->
 <label for="id">Update: </label><input type="text" id="id" width="20" value="id">
-<input type="text" id="uptname" width="20" value="uptname">
-<input type="text" id="updemail" width="20" value="updemail">
+<input type="text" id="name" width="20" value="name">
+<input type="text" id="email" width="20" value="email">
 <button onClick="updStudent()">Update</button>
 
 </body>
@@ -79,7 +79,7 @@ addButton.addEventListener("click", addStudent);
 <script>
 baseURL='https://jose.dbsprojects.ie:8080/';
 let updStudent =()=>{        
-fetch(baseURL+'update?id='+id.value+'&name='+uptname.value+'&email='+updemail.value).then((resp)=>{alert("Student Updated");}
+fetch(baseURL+'update?id='+id.value+'&name='+uptname.value+'&name='+updemail.value+'&name=').then((resp)=>{alert("Student Updated");}
 );}
 </script>
 </html>
