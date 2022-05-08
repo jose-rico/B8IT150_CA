@@ -1,90 +1,425 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+<!--Entry Point:index.html - Project: Web desing for Construcciones Manin, S.L - Author: Jose Maria Rico Leal --> 
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<title>Test API Client</title>
-<script>
-let doIt=()=>{
-let tab=document.getElementById("tab1");
-let rows=tab1.getElementsByTagName('tr');
-fetch('https://jose.dbsprojects.ie:8080/')
-.then(response => response.json())
-.then(data=>{data.Results.forEach(
-x=>{
-let newRow=rows[0].cloneNode(true);
-let divs=newRow.getElementsByTagName('td');
-divs[0].innerHTML=x['ID'];
-divs[1].innerHTML=x['Name'];
-divs[2].innerHTML=x['Email'];
-tab1.appendChild(newRow);
-}
-);
-tab1.setAttribute("style","\"\"");
-}
-);
-}
+    <title>Start | Cool Bikes Ltd</title>
+    <!-- SEO meta tags -->
+    <meta name="google-site-verification" content="UOJC-tyB3JUHv0xn1sN9ed5QrlOq6bMThFYGTUULN2Q" />
+    <meta name="description" content="Empresa de construcción y reformas en general en Castalla Alicante. Tu satisfacción nuestro máximo objetivo. Nos adaptamos a tus necesidades, presupuesto sin compromiso.">
+    <meta name="keywords" content="reforma, reformas, presupuesto, obra, obras, construcción, construcciones, reforma, reformas, azulejo, alicatado, cocinas, baños, castalla, alicante">
+    <meta name="og:title" property="og:title" content="Construcciones Manin, S.L.">
+    <meta property="og:locale" content="en_EN" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="application-name" content="&nbsp;" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Changa+One|Montserrat:100,100i,200,200i,300,300i,400,400i,500,600,700,800" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="assets/favicon/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/favicon/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/favicon/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/favicon/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="assets/favicon/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="assets/favicon/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="assets/favicon/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="assets/favicon/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-128.png" sizes="128x128" />
 
-</script>
+
+
 </head>
+
 <body>
-<button onClick="doIt()">Press me</button>
-This is where the results turn up: <br/>
-<table id='tab1' bgcolor='blue' style="display: none">
-<tr><td>ID</td><td>Name</td><td>Email</td></tr>
-</table>
-<BR/>
-<!--Adding records-->
-<label for="id">NEW: </label><input type="text" id="name" width="20" value="name">
-<input type="text" id="email" width="20" value="email">
-<button id='adlb'>Add</button>
-<BR/>
-<!--Deleting records-->
-<label for="id">ID: </label><input type="text" id="id" width="20" value="-1">
-<button id='delb'>Delete</button>
-<BR/>
-<!--Updating records-->
-<label for='updateID'>Update</label>
-<input type="text" name="uid" id="uid">
-<input type="text" name="uname" id="uname">
-<input type="text" name="uemail" id="uemail">
-<button onClick="updStudent()"> Click to update </button>
+    <header class="header bg">
+        <div class="container text-white">
+            <div class="row">
+                <div class="col-sm-2 col-0 align-self-center box-1">
+                </div>
+                <div class="col-sm-10 col-12 align-self-center text-right">
+                    <div class="social-icons">
+                        <ul>
+                            <li>email: 10539218@mydbs.ie</li>
+                            <li>Call us : 089 45 60 768</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--/row-->
+        </div>
+        <!--container-->
+    </header>
+    <span class="position-absolute trigger"><!-- hidden trigger to apply 'stuck' styles --></span>
+    <!--Navbar blue-->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top teal" id="myHeader">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Start <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <span class="hidden" href="#">/</span>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="custom.html">Custom</a>
+                    </li>
+                    <li class="nav-item">
+                        <span class="hidden" href="#">/</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="buy.html">Buy</a>
+                    </li>
+                    <li class="nav-item">
+                        <span class="hidden" href="#">/</span>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--/.container end-->
+    </nav>
+    <!--/.Navbar blue-->
+    <!--Section-1-->
+    <section class="section-1">
+        <div class="jumbotron d-flex align-items-center">
+            <div class="gradient"></div>
+            <div class="container content">
+                <h1>Bienvenidos, Benvinguts, Welcome, 欢迎, أهلا بك  </h1>
+                <h2>Pensando en la reforma de tus sueños, nosotros te ayudamos!!</h2>
+               
+               
+            </div>
+            <!--container-fluid end-->
+        </div>
+    </section>
+    <!--Section-1-->
+    <section class="services">
+        <div class="container">
+            <div class="row" data-aos="fade-up" data-aos-duration="500">
 
+                <div class="col-lg-4 col-md-12 col-xs-12">
+                    <div class="card">
+                        <div class="card-block block-1">
+                            <h3 class="card-title"><a href="services.html">Construcciones y reformas en General</a></h3>
+                        </div>
+                        <p class="card-text">Te ofrecemos un servicio integral para tu reforma, asesorándote desde el principio, resolviendo todos los tramites administrativos, y ayudándote a tomar decisiones en cuanto a decoración, distribución o calidad de los materiales. Nos ocupamos de todos los detalles de la obra o reforma desde el diseño de la misma (ofreciendo varias opciones) , sea cual sea el tamaño, ofrecemos servicio de dirección de obra, redacción de proyectos, decoración, albañilería, fontanería, instalación de aire acondicionado, etc… y siempre con el compromiso de calidad y de cumplir los plazos.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-12 col-xs-12">
+                    <div class="card">
+                        <div class="card-block block-2">
+                            <h3 class="card-title"><a href="services.html">Nuestro objetivo</a></h3>
+                        </div>
+                        <p class="card-text">Empresa de construcción y reformas en Castalla (Alicante) se caracteriza por la calidad y el buen servicio que prestamos. Nuestra práctica profesional está enfocada en asesorar al cliente de la mejor forma, respetando el presupuesto y los plazos de ejecución. Nuestro principal objetivo es conseguir la satisfacción del cliente, proporcionando un servicio de calidad y adaptado a sus condiciones.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-12 col-xs-12">
+                    <div class="card">
+                        <div class="card-block block-3">
+                            <h3 class="card-title"><a href="services.html">Sobre nosotros</a></h3>
+                        </div>
+                        <p class="card-text">Construcciones Manin es una empresa familiar gestionada por Germán Rico que cuenta con más de 20 años de experiencia en el sector.
+                            Estamos capacitados para desarrollar cualquier reto en materia de construcción, desde reformas o rehabilitaciones. Realizamos todo tipo de proyectos: comunidades, fachadas, naves, chalets, piscinas y reformas de pisos. Facilitamos el día a día al cliente con asesoramiento y acompañamiento durante todo el proceso de la obra. Garantizamos la seguridad y la legalidad de todo el proyecto.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <!-- Container -->
+        <div class="container">
+            <!-- Row -->
+            <div class="row align-items-center" data-aos="fade-up" data-aos-duration="500">
+                <div class="col-lg-5 col-md-12 left-side">
+                    <!-- 1st col -->
+                    <figure class="figure">
+                        <img src="assets/images/futurista.jpg" class="figure-img img-fluid" title="No hay proyecto complicado, solo falta de ideas">
+                        <span class="box-1"></span>
+                    </figure>
+                </div>
+                <div class="col-lg-7 col-md-12 right-side">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>Te damos ideas</h3>
+                            <h4>Veámoslas ....</h4>
+                        </div>
+                        <div class="col-md-12 about-middle">
+                            <h5>Abiertos a cualquier propuesta</h5>
+                            <p>Por descabellado que sea tu proyecto, nosotros te escuchamos y te proporcionamos soluciones.</p>
+
+                            
+                        </div>
+                        <div class="col-md-12">
+                            <!-- Buttons hemos borrado el contenido de los botones pero dejado el tag para que cuadre todo-->
+                            <a href="#" class="btn"></a>
+                            <a href="#" class="btn"></a>
+                            <!-- Buttons End-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Row End-->
+        </div>
+        <!-- Container End -->
+    </section>
+    <div class="container">
+    </div>
+    <!-- About-Section End-->
+    <section class="section-2">
+        <div class="container">
+            <div class="row" data-aos="fade-up" data-aos-duration="500">
+                <div class="col-lg-7 col-md-12">
+                    <div id="accordion" class="accordion">
+                        <div class="card">
+                            <div class="card-header" data-toggle="collapse" href="#collapseOne">
+                                <a class="card-title">
+                                  Casa rústica reformada  
+                                </a>
+                            </div>
+                            <div id="collapseOne" class="card-body collapse show" data-parent="#accordion">
+                                <img src="assets/images/campo.jpg" class="figure-img img-fluid" title="Casa de campo rústica reformada">
+                            </div>
+                            <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                <a class="card-title">
+                                 Te ponemos el gresite en tu piscina
+                                </a>
+                            </div>
+                            <div id="collapseTwo" class="card-body collapse" data-parent="#accordion">
+                                <img src="assets/images/piscina.jpg" class="figure-img img-fluid" title="Reformamos o te construímos la piscina de tus sueños">
+                            </div>
+                            <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                <a class="card-title">
+                                 Colocamos el azulejo que elijas  
+                                </a>
+                            </div>
+                            <div id="collapseThree" class="collapse" data-parent="#accordion">
+                                <div class="card-body">
+                                    <img src="assets/images/manise.jpg" class="figure-img img-fluid" title="El alicatado es nuestra especialidad, tu nos dices como y con que azulejos!!">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-12">
+                    <figure class="figure">
+                        <img src="assets/images/section-2-image.jpg" class="figure-img img-fluid" alt="A generic square placeholder image with rounded corners in a figure.">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Support section Start -->
+    <section class="support">
+        <div class="container">
+            <div class="row"  data-aos="fade-up" data-aos-duration="300">
+                <div class="col-sm-12">
+                    <div class="heading">
+                        <h2>Vamos a crear un bonito proyecto juntos</h2>
+                        <h3>Tienes un proyecto en mente? Contáctanos...</h3>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row"  data-aos="fade-up" data-aos-duration="500">
+                        <div class="col-xl-9 col-lg-12 col-12">
+                            <form action="index.html" id="contact-form" method="get">
+                                <div class="row">
+                                    <div class="col-sm-6 form-group">
+                                        <input class="form-control" name="Nombre" type="text" id="first_name" placeholder="Escribe tu nombre...">
+                                    </div>
+                                    <div class="col-sm-6 form-group">
+                                        <input class="form-control" name="Correo electrónico" type="email" id="email" placeholder="Escribe tu correo...">
+                                    </div>
+                                    <div class="col-sm-12 form-group">
+                                        <input class="form-control" name="Numero de teléfono"type="number" id="contact_number" placeholder="eg. 6xx xx xx xx" min="9">
+                                    </div>
+                                </div>
+                                <textarea class="form-control" id="comments" name="comments" placeholder="Escribe tus comentarios" rows="7"></textarea><br>
+                                <div class="row">
+                                    <div class="col-sm-12 form-group">
+
+                                       
+                                        <button class="btn btn-default pull-left" type="submit" value="Enviar" onclick="print_out_error()">Enviar</button>
+                                    </div>
+                                    <br>
+                                    <div class="col-sm-12 form-group">
+                                        <button class="btn btn-default pull-left" type="reset" value="Limpiar formulario">Limpiar formulario</button>                              
+                                   </div>
+                                   <br>
+                                   <div class="col-sm-12 form-group">
+                                    <p id="error-list"> Numero (<span id="error-count"></span>) errores</p>
+                                    <span id="fail-message"></span>
+                                </div>
+                                </div>
+                    </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Support section Ended -->
+    
+    <!-- Footer -->
+    <footer class="page-footer">
+
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left">
+
+            <!-- Grid row -->
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-lg-4 col-md-12 mx-auto"><!-- We are using the same div to close the footer -->
+                    <img src="assets/images/logo-footer.png" alt="footer"> 
+                    <p>Powered by Construcciones Manin, S.L.<span>© 2021</span></p>
+                </div>
+                <!-- Grid column -->
+                <div class="col-lg-8 col-md-12">
+                    <div class="row">
+                        <!-- Grid column -->
+                        <div class="col-md-4 mx-auto">
+
+                            <!-- Links -->
+                            <h5 class="font-weight-bold text-uppercase mt-3">Síguenos por las Redes Sociales:</h5>
+
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="https://www.facebook.com/pages/category/Home-Improvement/Reformas-y-construcciones-manin-1061805253880809/" class="fa fa-facebook"></a>
+                                </li>
+
+                                <li>
+                                    <a href="https://www.instagram.com/accounts/emailsignup/?hl=en" class="fa fa-instagram"></a>
+                                </li>
+
+                                <li>
+                                    <a href="https://www.linkedin.com/in/josemariaricoleal/" class="fa fa-linkedin"></a>
+                                </li>
+                            </ul>
+
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-4 mx-auto">
+
+                            <!-- Links -->
+                            <h5 class="font-weight-bold text-uppercase mt-3">Dónde encontrarnos:</h5>
+
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="https://www.google.com/maps/place/Construcciones+Manin,+S.L./@38.5967627,-0.666674,17z/data=!3m1!4b1!4m5!3m4!1s0xd63d56a5428ee6f:0xb4a4b99f65f00d8!8m2!3d38.5967627!4d-0.6644853">Construcciones y reformas en Castalla</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.google.com/maps/place/Construcciones+Manin,+S.L./@38.5967627,-0.666674,17z/data=!3m1!4b1!4m5!3m4!1s0xd63d56a5428ee6f:0xb4a4b99f65f00d8!8m2!3d38.5967627!4d-0.6644853">Carrer San Vicent del Raspeig, N° 16, 03420, Castalla, Alicante, Spain</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.google.com/maps/place/Construcciones+Manin,+S.L./@38.5967627,-0.666674,17z/data=!3m1!4b1!4m5!3m4!1s0xd63d56a5428ee6f:0xb4a4b99f65f00d8!8m2!3d38.5967627!4d-0.6644853">L a V: 8:00 a 13:00 - 15:00 a 18:00</a>
+                                </li>
+                                
+                            </ul>
+
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-4 mx-auto">
+
+                            <!-- Links -->
+                            <h5 class="font-weight-bold text-uppercase mt-3">Contacto</h5>
+
+                            <ul class="list-unstyled">
+                                <li >
+                                    <a class="spain">637 40 60 50 </a>
+                                </li>
+                                <li >
+                                    <a class="uk">602 21 96 53</a>
+                                </li>
+                                <li >
+                                    <a href="https://www.google.com/maps/place/Construcciones+Manin,+S.L./@38.5967627,-0.666674,17z/data=!3m1!4b1!4m5!3m4!1s0xd63d56a5428ee6f:0xb4a4b99f65f00d8!8m2!3d38.5967627!4d-0.6644853">Dirección en mapa </a>
+                                </li>
+                                 <li >
+                                    <a >construccionesmanin<span></span>@gmail.com </a>
+                                </li>
+                                
+                            </ul>
+
+                          
+
+                        </div>
+                        <!-- Grid column -->
+                    </div>
+                </div>
+
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+
+    </footer>
+    <!-- Footer -->
+
+    <!-- Return to Top -->
+    <a href="javascript:" id="return-to-top"><i class="fa fa-long-arrow-up" aria-hidden="true"></i></a>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js" integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Custom JavaScript -->
+    <script src="assets/js/animate.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        (function() {
+            'use strict'
+
+            if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+                var msViewportStyle = document.createElement('style')
+                msViewportStyle.appendChild(
+                    document.createTextNode(
+                        '@-ms-viewport{width:auto!important}'
+                    )
+                )
+                document.head.appendChild(msViewportStyle)
+            }
+
+        }())
+    </script>
 </body>
-<!--Script deleting records-->
-<script>
-baseURL='https://jose.dbsprojects.ie:8080/'
-let delButton=document.getElementById('delb');
-let deleteStudent= (event)=>{
-let id=document.getElementById('id').value;
-fetch(baseURL+'delete?id='+id).then((resp)=>{
-alert("Student Deleted");//Obviously check success first
-});
-}
-delButton.addEventListener("click", deleteStudent);
-</script>
-<!--Script adding records-->
-<script>
-baseURL='https://jose.dbsprojects.ie:8080/';
-let addButton=document.getElementById('adlb');
-let name=document.getElementById('name');
-let email=document.getElementById('email');
-let addStudent=()=>{        
-fetch(baseURL+'add?name='+document.getElementById('name').value+'&email='+document.getElementById('email').value).then((resp)=>{alert("Student Added");
-      }
-    );
-  }
-addButton.addEventListener("click", addStudent);
-</script>
-Script updating records
-<script>
-baseURL='https://jose.dbsprojects.ie:8080/';
-
-let updStudent = () => {       
-fetch(baseURL+'update?id='+uid.value+'&name='+uname.value+'&email='+uemail.value).then((resp)=>{alert("Student Updated");}
-);}
-</script>
-
-
 
 </html>
