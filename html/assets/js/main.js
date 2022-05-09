@@ -78,57 +78,7 @@ $(document).ready(function() {
 }
 
 
-let doIt = () => {
-	let tab = document.getElementById("tab1");
-	let rows = tab1.getElementsByTagName('tr');
-	fetch('https://jose.dbsprojects.ie:8080/')
-		.then(response => response.json())
-		.then(data => {
-			data.Results.forEach(
-				x => {
-					let newRow = rows[0].cloneNode(true);
-					let divs = newRow.getElementsByTagName('td');
-					divs[0].innerHTML = x['ID'];
-					divs[1].innerHTML = x['Name'];
-					divs[2].innerHTML = x['Email'];
-					tab1.appendChild(newRow);
-				}
-			);
-			tab1.setAttribute("style", "\"\"");
-		}
-		);
-}
-//Script deleting records
-baseURL = 'https://jose.dbsprojects.ie:8080/'
-let delButton = document.getElementById('delb');
-let deleteStudent = (event) => {
-	let id = document.getElementById('id').value;
-	fetch(baseURL + 'delete?id=' + id).then((resp) => {
-		alert("Student Deleted");//Obviously check success first
-	});
-}
-delButton.addEventListener("click", deleteStudent);
 
-//Adding students
-baseURL = 'https://jose.dbsprojects.ie:8080/';
-let addButton = document.getElementById('adlb');
-let name = document.getElementById('name');
-let email = document.getElementById('email');
-let addStudent = () => {
-	fetch(baseURL + 'add?name=' + document.getElementById('name').value + '&email=' + document.getElementById('email').value).then((resp) => {
-		alert("Student Added");
-	}
-	);
-}
-addButton.addEventListener("click", addStudent);
-
-//Updating students
-baseURL = 'https://jose.dbsprojects.ie:8080/';
-
-let updStudent = () => {
-	fetch(baseURL + 'update?id=' + uid.value + '&name=' + uname.value + '&email=' + uemail.value).then((resp) => { alert("Student Updated"); }
-	);
-}
 
 
 

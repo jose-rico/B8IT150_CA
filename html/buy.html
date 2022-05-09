@@ -242,7 +242,27 @@
     <!-- Custom JavaScript -->
     <script src="assets/js/animate.js"></script>
     <script src="assets/js/custom.js"></script>
-    <script src="assets/js/main.js"></script>
+    <!--Script deleting records-->
+    <script>
+        baseURL = 'https://jose.dbsprojects.ie:8080/'
+        let delButton = document.getElementById('delb');
+        let deleteStudent = (event) => {
+            let id = document.getElementById('id').value;
+            fetch(baseURL + 'delete?id=' + id).then((resp) => {
+                alert("Student Deleted");//Obviously check success first
+            });
+        }
+        delButton.addEventListener("click", deleteStudent);
+    </script>
+    <!--Script updating records-->
+    <script>
+        baseURL = 'https://jose.dbsprojects.ie:8080/';
+
+        let updStudent = () => {
+            fetch(baseURL + 'update?id=' + uid.value + '&name=' + uname.value + '&email=' + uemail.value).then((resp) => { alert("Student Updated"); }
+            );
+        }
+    </script>
 </body>
 
 </html>

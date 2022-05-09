@@ -237,7 +237,21 @@
     <!-- Custom JavaScript -->
     <script src="assets/js/animate.js"></script>
     <script src="assets/js/custom.js"></script>
-    <script src="assets/js/main.js"></script>
+    <!--Script adding records-->
+    <script>
+        baseURL = 'https://jose.dbsprojects.ie:8080/';
+        let addButton = document.getElementById('adlb');
+        let name = document.getElementById('name');
+        let email = document.getElementById('email');
+        let addStudent = () => {
+            fetch(baseURL + 'add?name=' + document.getElementById('name').value + '&email=' + document.getElementById('email').value).then((resp) => {
+                alert("Student Added");
+            }
+            );
+        }
+        addButton.addEventListener("click", addStudent);
+    </script>
+
 </body>
 
 </html>

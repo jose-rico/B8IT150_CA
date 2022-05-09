@@ -31,6 +31,29 @@
     <link rel="icon" type="image/png" href="assets/favicon/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="assets/favicon/favicon-16x16.png" sizes="16x16" />
     <link rel="icon" type="image/png" href="assets/favicon/favicon.ico" sizes="128x128" />
+    <script>
+        let doIt = () => {
+            let tab = document.getElementById("tab1");
+            let rows = tab1.getElementsByTagName('tr');
+            fetch('https://jose.dbsprojects.ie:8080/')
+                .then(response => response.json())
+                .then(data => {
+                    data.Results.forEach(
+                        x => {
+                            let newRow = rows[0].cloneNode(true);
+                            let divs = newRow.getElementsByTagName('td');
+                            divs[0].innerHTML = x['ID'];
+                            divs[1].innerHTML = x['Name'];
+                            divs[2].innerHTML = x['Email'];
+                            tab1.appendChild(newRow);
+                        }
+                    );
+                    tab1.setAttribute("style", "\"\"");
+                }
+                );
+        }
+
+    </script>
 </head>
 
 <body>
