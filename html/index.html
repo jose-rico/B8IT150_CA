@@ -31,31 +31,6 @@
     <link rel="icon" type="image/png" href="assets/favicon/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="assets/favicon/favicon-16x16.png" sizes="16x16" />
     <link rel="icon" type="image/png" href="assets/favicon/favicon.ico" sizes="128x128" />
-    <script>
-        let doIt = () => {
-            let tab = document.getElementById("tab1");
-            let rows = tab1.getElementsByTagName('tr');
-            fetch('https://jose.dbsprojects.ie:8080/')
-                .then(response => response.json())
-                .then(data => {
-                    data.Results.forEach(
-                        x => {
-                            let newRow = rows[0].cloneNode(true);
-                            let divs = newRow.getElementsByTagName('td');
-                            divs[0].innerHTML = x['ID'];
-                            divs[1].innerHTML = x['Name'];
-                            divs[2].innerHTML = x['Email'];
-                            tab1.appendChild(newRow);
-                        }
-                    );
-                    tab1.setAttribute("style", "\"\"");
-                }
-                );
-        }
-
-    </script>
-
-
 </head>
 
 <body>
@@ -144,21 +119,8 @@
                 <tr><td>ID</td><td>Name</td><td>Email</td></tr>
             </table>
             <BR />
-            <!--Adding records-->
-            <label for="id">NEW: </label><input type="text" id="name" width="20" value="name">
-            <input type="text" id="email" width="20" value="email">
-            <button id='adlb'>Add</button>
-            <BR />
-            <!--Deleting records-->
-            <label for="id">ID: </label><input type="text" id="id" width="20" value="-1">
-            <button id='delb'>Delete</button>
-            <BR />
-            <!--Updating records-->
-            <label for='updateID'>Update</label>
-            <input type="text" name="uid" id="uid">
-            <input type="text" name="uname" id="uname">
-            <input type="text" name="uemail" id="uemail">
-            <button onClick="updStudent()"> Click to update </button>
+         
+            
         </div>
     </section>
 
@@ -288,41 +250,8 @@
 
         }())
     </script>
-    <!--Script deleting records-->
-    <script>
-        baseURL = 'https://jose.dbsprojects.ie:8080/'
-        let delButton = document.getElementById('delb');
-        let deleteStudent = (event) => {
-            let id = document.getElementById('id').value;
-            fetch(baseURL + 'delete?id=' + id).then((resp) => {
-                alert("Student Deleted");//Obviously check success first
-            });
-        }
-        delButton.addEventListener("click", deleteStudent);
-    </script>
-    <!--Script adding records-->
-    <script>
-        baseURL = 'https://jose.dbsprojects.ie:8080/';
-        let addButton = document.getElementById('adlb');
-        let name = document.getElementById('name');
-        let email = document.getElementById('email');
-        let addStudent = () => {
-            fetch(baseURL + 'add?name=' + document.getElementById('name').value + '&email=' + document.getElementById('email').value).then((resp) => {
-                alert("Student Added");
-            }
-            );
-        }
-        addButton.addEventListener("click", addStudent);
-    </script>
-    <!--Script updating records-->
-    <script>
-        baseURL = 'https://jose.dbsprojects.ie:8080/';
-
-        let updStudent = () => {
-            fetch(baseURL + 'update?id=' + uid.value + '&name=' + uname.value + '&email=' + uemail.value).then((resp) => { alert("Student Updated"); }
-            );
-        }
-    </script>
+    
+  
 </body>
 
 </html>
