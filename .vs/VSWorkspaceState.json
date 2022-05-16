@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\html",
+    "\\html\\assets",
+    "\\html\\assets\\css",
+    "\\html\\assets\\js"
   ],
-  "SelectedNode": "\\app.py",
+  "SelectedNode": "\\html\\index.html",
   "PreviewInSolutionExplorer": false
 }

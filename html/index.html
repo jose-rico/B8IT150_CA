@@ -138,13 +138,16 @@
         <div class="container">
             <button onClick="doIt()">Press me</button>
             This is where the results turn up: <br />
-            <table id='tab1' bgcolor='blue' style="display: none">
-                <tr><td>ID</td><td>Name</td><td>Email</td></tr>
+            <table id='tab1' bgcolor='red' style="display: none">
+                <tr><td>ID</td><td>Bike</td><td>Wheels</td><td>Groupset</td><td>Size</td><td>Price</td></tr>
             </table>
             <BR />
             <!--Adding records-->
-            <label for="id">NEW: </label><input type="text" id="name" width="20" value="name">
-            <input type="text" id="email" width="20" value="email">
+            <label for="id">New Bike: </label><input type="text" id="bike" width="20" value="bike">
+            <input type="text" id="wheels" width="20" value="wheels">
+            <input type="text" id="groupset" width="20" value="groupset">
+            <input type="text" id="size" width="20" value="size">
+            <input type="text" id="price" width="20" value="price">
             <button id='adlb'>Add</button>
             <BR />
             <!--Deleting records-->
@@ -154,9 +157,12 @@
             <!--Updating records-->
             <label for='updateID'>Update</label>
             <input type="text" name="uid" id="uid">
-            <input type="text" name="uname" id="uname">
-            <input type="text" name="uemail" id="uemail">
-            <button onClick="updStudent()"> Click to update </button>
+            <input type="text" name="ubike" id="ubike">
+            <input type="text" name="uwheels" id="uwheels">
+            <input type="text" name="ugroupset" id="ugroupset">
+            <input type="text" name="usize" id="usize">
+            <input type="text" name="uprice" id="uprice">
+            <button onClick="updBike()"> Click to update </button>
 
         </div>
     </section>
@@ -292,34 +298,37 @@
     <script>
         baseURL = 'https://jose.dbsprojects.ie:8080/'
         let delButton = document.getElementById('delb');
-        let deleteStudent = (event) => {
+        let deleteBike = (event) => {
             let id = document.getElementById('id').value;
             fetch(baseURL + 'delete?id=' + id).then((resp) => {
-                alert("Student Deleted");//Obviously check success first
+                alert("Bike Sold");//Obviously check success first
             });
         }
-        delButton.addEventListener("click", deleteStudent);
+        delButton.addEventListener("click", deleteBike);
     </script>
     <!--Script adding records-->
     <script>
         baseURL = 'https://jose.dbsprojects.ie:8080/';
         let addButton = document.getElementById('adlb');
-        let name = document.getElementById('name');
-        let email = document.getElementById('email');
-        let addStudent = () => {
-            fetch(baseURL + 'add?name=' + document.getElementById('name').value + '&email=' + document.getElementById('email').value).then((resp) => {
-                alert("Student Added");
+        let bike = document.getElementById('bike');
+        let wheels = document.getElementById('wheels');
+        let groupset = document.getElementById('groupset');
+        let size = document.getElementById('size');
+        let price = document.getElementById('price');
+        let addBike = () => {
+            fetch(baseURL + 'add?bike=' + document.getElementById('bike').value + '&wheels=' + document.getElementById('wheels') + '&groupset=' + document.getElementById('groupset') + '&size=' + document.getElementById('size') + '&price=' + document.getElementById('price').value).then((resp) => {
+                alert("Bike Added");
             }
             );
         }
-        addButton.addEventListener("click", addStudent);
+        addButton.addEventListener("click", addBike);
     </script>
     <!--Script updating records-->
     <script>
         baseURL = 'https://jose.dbsprojects.ie:8080/';
 
         let updStudent = () => {
-            fetch(baseURL + 'update?id=' + uid.value + '&name=' + uname.value + '&email=' + uemail.value).then((resp) => { alert("Student Updated"); }
+            fetch(baseURL + 'update?id=' + uid.value + '&bike=' + ubike.value + '&wheels=' + uwheels.value + '&groupset=' + ugroupset.value + '&size=' + usize.value + '&price=' + uprice.value).then((resp) => { alert("Bike Modified"); }
             );
         }
     </script>

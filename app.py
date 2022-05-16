@@ -14,33 +14,39 @@ app.config['MYSQL_DB'] = 'student'
 app.config['MYSQL_HOST'] = 'localhost' #for now
 mysql.init_app(app)
 
-@app.route("/add") #Add Student
+@app.route("/add") #Add Bike
 def add():
-  name = request.args.get('name')
-  email = request.args.get('email')
+  bike = request.args.get('bike')
+  wheels = request.args.get('wheels')
+  groupset = request.args.get('groupset')
+  size = request.args.get('size')
+  price = request.args.get('price')
   cur = mysql.connection.cursor() #create a connection to the SQL instance
-  s='''INSERT INTO students(studentName, email) VALUES('{}','{}');'''.format(name,email)
+  s='''INSERT INTO (bikeBrand, wheels, groupset, size, price) VALUES('{}','{}','{}','{}''{}');'''.format(bike,wheels,groupset,size,price)
   cur.execute(s)
   mysql.connection.commit()
   return '{"Result":"Success"}'
 
-@app.route("/delete") #Delete Student
+@app.route("/delete") #Delete Bike when buying
 def delete():
   id = request.args.get('id')
   cur = mysql.connection.cursor() #create a connection to the SQL instance
-  s='''DELETE FROM students WHERE studentID=%s;'''
+  s='''DELETE FROM bikes WHERE bikeID=%s;'''
   cur.execute(s,id)
   mysql.connection.commit()
   return '{"Result":"Success"}'
  
-@app.route("/update") #Update Student
+@app.route("/update") #Update Bike
 def update():
-  name = request.args.get('name')
-  email = request.args.get('email')
+  bike = request.args.get('bike')
+  wheels = request.args.get('wheels')
+  groupset = request.args.get('groupset')
+  size = request.args.get('size')
+  price = request.args.get('price')
   id = request.args.get('id')
   cur = mysql.connection.cursor() #create a connection to the SQL instance
-  s='''UPDATE students SET studentName=%s, email=%s WHERE studentID=%s;'''
-  cur.execute(s, (name, email, id))
+  s='''UPDATE bikes SET bikeBrand=%s, wheels=%s, groupset=%s, size=%s price=%s, WHERE studentID=%s;'''
+  cur.execute(s, (bike,wheels,groupset,size,price, id))
   mysql.connection.commit()
   return '{"Result":"Success"}'
 
@@ -48,15 +54,18 @@ def update():
 @app.route("/") #Default - Show Data
 def hello(): # Name of the method
   cur = mysql.connection.cursor() #create a connection to the SQL instance
-  cur.execute('''SELECT * FROM students''') # execute an SQL statment
+  cur.execute('''SELECT * FROM bikes''') # execute an SQL statment
   rv = cur.fetchall() #Retreive all rows returend by the SQL statment
   Results=[]
   for row in rv: #Format the Output Results and add to return string
     Result={}
     print(row)
-    Result['Name']=row[0]#.replace('\n',' ') by disbling this it will handle records with no name add some javascritpt not allowing to insert null values!!!
-    Result['Email']=row[1]
-    Result['ID']=row[2]
+    Result['Bike']=row[0]#.replace('\n',' ') by disbling this it will handle records with no name add some javascritpt not allowing to insert null values!!!
+    Result['Wheels']=row[1]
+    Result['Groupset']=row[2]
+    Result['Size']=row[3]
+    Result['Price']=row[4]
+    Result['ID']=row[5]
     Results.append(Result)
   response={'Results':Results, 'count':len(Results)}
   ret=app.response_class(
