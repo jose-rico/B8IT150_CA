@@ -10,7 +10,7 @@ CORS(app)
 # Change the HOST IP and Password to match your instance configurations
 app.config['MYSQL_USER'] = 'web'
 app.config['MYSQL_PASSWORD'] = 'webPass'
-app.config['MYSQL_DB'] = 'student'
+app.config['MYSQL_DB'] = 'bike'
 app.config['MYSQL_HOST'] = 'localhost' #for now
 mysql.init_app(app)
 
@@ -45,7 +45,7 @@ def update():
   price = request.args.get('price')
   id = request.args.get('id')
   cur = mysql.connection.cursor() #create a connection to the SQL instance
-  s='''UPDATE bikes SET bikeBrand=%s, wheels=%s, groupset=%s, size=%s price=%s, WHERE studentID=%s;'''
+  s='''UPDATE bikes SET bikeBrand=%s, wheels=%s, groupset=%s, size=%s price=%s, WHERE bikeID=%s;'''
   cur.execute(s, (bike,wheels,groupset,size,price, id))
   mysql.connection.commit()
   return '{"Result":"Success"}'
