@@ -22,7 +22,7 @@ def add():
   size = request.args.get('size')
   price = request.args.get('price')
   cur = mysql.connection.cursor() #create a connection to the SQL instance
-  s='''INSERT INTO (bikeBrand, wheels, groupset, size, price) VALUES('{}','{}','{}','{}''{}');'''.format(bike,wheels,groupset,size,price)
+  s='''INSERT INTO (bikeBrand, wheels, groupset, size, price) VALUES('{}','{}','{}','{}','{}');'''.format(bike,wheels,groupset,size,price)
   cur.execute(s)
   mysql.connection.commit()
   return '{"Result":"Success"}'
