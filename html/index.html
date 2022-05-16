@@ -43,11 +43,8 @@
                             let newRow = rows[0].cloneNode(true);
                             let divs = newRow.getElementsByTagName('td');
                             divs[0].innerHTML = x['ID'];
-                            divs[1].innerHTML = x['Bike'];
-                            divs[2].innerHTML = x['Wheels'];
-                            divs[3].innerHTML = x['Groupset'];
-                            divs[4].innerHTML = x['Size'];
-                            divs[5].innerHTML = x['Price'];
+                            divs[1].innerHTML = x['Name'];
+                            divs[2].innerHTML = x['Email'];
                             tab1.appendChild(newRow);
                         }
                     );
@@ -162,7 +159,7 @@
             <input type="text" name="uid" id="uid">
             <input type="text" name="ubike" id="ubike">
             <input type="text" name="uwheels" id="uwheels">
-            <input type="text" name="ugroupset" id="ugroupset">
+            <input type="text" name="ugroupset" id="groupset">
             <input type="text" name="usize" id="usize">
             <input type="text" name="uprice" id="uprice">
             <button onClick="updBike()"> Click to update </button>
@@ -319,9 +316,9 @@
         let size = document.getElementById('size');
         let price = document.getElementById('price');
         let addBike = () => {
-            fetch(baseURL + 'add?bike=' + document.getElementById('bike').value + '&wheels=' + document.getElementById('wheels').value + '&groupset=' + document.getElementById('groupset').value + '&size=' + document.getElementById('size').value + '&price=' + document.getElementById('price').value).then((resp) => {
+            fetch(baseURL + 'add?bike=' + document.getElementById('bike').value + '&wheels=' + document.getElementById('wheels') + '&groupset=' + document.getElementById('groupset') + '&size=' + document.getElementById('wh') + '&wheels=' + document.getElementById('wheels').value).then((resp) => {
                 alert("Bike Added");
-            }              
+            }
             );
         }
         addButton.addEventListener("click", addBike);
@@ -331,7 +328,7 @@
         baseURL = 'https://jose.dbsprojects.ie:8080/';
 
         let updStudent = () => {
-            fetch(baseURL + 'update?id=' + uid.value + '&bike=' + ubike.value + '&wheels=' + uwheels.value + '&groupset=' + ugroupset.value + '&size=' + usize.value + '&price=' + uprice.value).then((resp) => { alert("Bike Modified"); }
+            fetch(baseURL + 'update?id=' + uid.value + '&name=' + uname.value + '&email=' + uemail.value).then((resp) => { alert("Student Updated"); }
             );
         }
     </script>
