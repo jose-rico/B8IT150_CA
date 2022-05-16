@@ -43,8 +43,11 @@
                             let newRow = rows[0].cloneNode(true);
                             let divs = newRow.getElementsByTagName('td');
                             divs[0].innerHTML = x['ID'];
-                            divs[1].innerHTML = x['Name'];
-                            divs[2].innerHTML = x['Email'];
+                            divs[1].innerHTML = x['Bike'];
+                            divs[2].innerHTML = x['Wheels'];
+                            divs[3].innerHTML = x['Groupset'];
+                            divs[4].innerHTML = x['Size'];
+                            divs[5].innerHTML = x['Price'];
                             tab1.appendChild(newRow);
                         }
                     );
