@@ -80,6 +80,13 @@ $(document).ready(function() {
 
 
 
-
-
+// I took the code from: www.codegrepper.com/code-examples/html/javascript+onclick+reset+page
+//Using this to clean up Index table
+const reloadtButton = document.querySelector("#reload");
+// Reload everything:
+function reload() {
+	reload = location.reload();
+}
+// Event listeners for reload
+reloadButton.addEventListener("click", reload, false);
 

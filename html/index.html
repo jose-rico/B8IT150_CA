@@ -139,13 +139,17 @@
             <div class="col-12 col-lg-12 col-xl-8">
 
 
-                <button class="btn btn-default pull-left" onClick="doIt()">Press me</button>
-
+                
+                <div class="col-12 col-lg-12 col-xl-8">
+                    <button class="btn btn-default pull-left" onClick="doIt()">Press me</button>
+                    <button class="btn btn-default pull-left" onClick="window.location.reload();">Clean Table</button>
+                </div>
+                
                 <br /><br /><br /><br />
-                <p>This is where the results turn up:</p> <br />
+                <p>This is our bike catalog:</p> <br />
 
 
-                <table id='tab1'  style="display: none">
+                <table id='tab1' style="display: none">
 
                     <tr><td>ID</td><td>Bike</td><td>Wheels</td><td>Groupset</td></tr>
                 </table>
