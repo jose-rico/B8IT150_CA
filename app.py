@@ -19,7 +19,7 @@ def add():
   name = request.args.get('name')
   email = request.args.get('email')
   cur = mysql.connection.cursor() #create a connection to the SQL instance
-  s='''INSERT INTO students(studentName, email) VALUES('{}','{}');'''.format(name,email)
+  s='''INSERT INTO students(studentName, email, groupset) VALUES('{}','{}','{}');'''.format(name,email,groupset)
   cur.execute(s)
   mysql.connection.commit()
   return '{"Result":"Success"}'
@@ -37,10 +37,11 @@ def delete():
 def update():
   name = request.args.get('name')
   email = request.args.get('email')
+  groupset = request.args.get('groupset')
   id = request.args.get('id')
   cur = mysql.connection.cursor() #create a connection to the SQL instance
-  s='''UPDATE students SET studentName=%s, email=%s WHERE studentID=%s;'''
-  cur.execute(s, (name, email, id))
+  s='''UPDATE students SET studentName=%s, email=%s, groupset=%s WHERE studentID=%s;'''
+  cur.execute(s, (name, email, groupset, id))
   mysql.connection.commit()
   return '{"Result":"Success"}'
 
@@ -56,7 +57,8 @@ def hello(): # Name of the method
     print(row)
     Result['Name']=row[0]#.replace('\n',' ') by disbling this it will handle records with no name add some javascritpt not allowing to insert null values!!!
     Result['Email']=row[1]
-    Result['ID']=row[2]
+    Result['Groupset']=row[2]
+    Result['ID']=row[3]
     Results.append(Result)
   response={'Results':Results, 'count':len(Results)}
   ret=app.response_class(

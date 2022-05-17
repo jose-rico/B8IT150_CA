@@ -134,6 +134,9 @@
                                 <div class="col-sm-6 form-group">
                                     <input class="form-control" type="text" name="uemail" id="uemail">
                                 </div>
+                                <div class="col-sm-6 form-group">
+                                    <input class="form-control" type="text" name="ugroupset" id="ugroupset">
+                                </div>
 
                                 <button class="btn btn-default pull-left" id='delb'>Delete</button>
                                 <label for="id"></label>
@@ -269,7 +272,7 @@
         let deleteStudent = (event) => {
             let id = document.getElementById('id').value;
             fetch(baseURL + 'delete?id=' + id).then((resp) => {
-                alert("Student Deleted");//Obviously check success first
+                alert("Bike Deleted");//Obviously check success first
             });
         }
         delButton.addEventListener("click", deleteStudent);
@@ -279,7 +282,7 @@
         baseURL = 'https://jose.dbsprojects.ie:8080/';
 
         let updStudent = () => {
-            fetch(baseURL + 'update?id=' + uid.value + '&name=' + uname.value + '&email=' + uemail.value).then((resp) => { alert("Student Updated"); }
+            fetch(baseURL + 'update?id=' + uid.value + '&name=' + uname.value + '&email=' + uemail.value + '&groupset=' + ugroupset.value).then((resp) => { alert("Bike Updated"); }
             );
         }
     </script>
