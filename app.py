@@ -18,6 +18,7 @@ mysql.init_app(app)
 def add():
   name = request.args.get('name')
   email = request.args.get('email')
+  groupset = request.args.get('groupset')
   cur = mysql.connection.cursor() #create a connection to the SQL instance
   s='''INSERT INTO students(studentName, email, groupset) VALUES('{}','{}','{}');'''.format(name,email,groupset)
   cur.execute(s)
