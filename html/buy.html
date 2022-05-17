@@ -105,29 +105,49 @@
     <section id="services">
         <!-- Container Start -->
         <div class="container">
-            <!-- First Row Start -->
-            <div class="row main-content" data-aos="fade-up" data-aos-duration="500">
-
-
-            </div>
-            <!-- First Row Ended -->
-            <!-- Second Row Start -->
-            <div class="row main-content" data-aos="fade-up" data-aos-duration="500">
-                <!--Deleting records-->
-                <label for="id">ID: </label><input type="text" id="id" width="20" value="-1">
-                <button id='delb'>Delete</button>
-                <BR />
-            </div>
-            <!-- Second Row Ended -->
             <!-- Third Row Start -->
             <div class="row main-content" data-aos="fade-up" data-aos-duration="500">
 
                 <!--Updating records-->
-                <label for='updateID'>Update</label>
-                <input type="text" name="uid" id="uid">
-                <input type="text" name="uname" id="uname">
-                <input type="text" name="uemail" id="uemail">
-                <button onClick="updStudent()"> Click to update </button>
+              
+                
+                    <section id="contact-page">
+                        <div class="container">
+                            <div class="col-12 col-lg-12 col-xl-8" id="contact-form-1" method="get">
+                                <!--Adding records-->
+
+                                <br /><br /><br /><br />
+                                <label for='updateID'></label>
+                                <br>
+
+                                <button class="btn btn-default pull-left" onClick="updStudent()"> Click to update </button>
+                                <br /><br /><br />
+                                <p>Add a record here:</p>
+
+
+                                <div class="col-sm-6 form-group">
+                                    <input class="form-control" type="text" name="uid" id="uid">
+                                </div>
+                                <div class="col-sm-6 form-group">
+                                    <input class="form-control" type="text" name="uname" id="uname">
+                                </div>
+                                <div class="col-sm-6 form-group">
+                                    <input class="form-control" type="text" name="uemail" id="uemail">
+                                </div>
+
+                                <button class="btn btn-default pull-left" id='delb'>Delete</button>
+                                <label for="id"></label>
+                                <br /> <br /> <br /> <br />
+                                <div class="col-sm-6 form-group">
+                                    <input class="form-control" type="text" id="id" placeholder="Enter an ID">
+                                </div>
+
+                                <BR />
+                            </div>
+                        </div>
+
+                    </section>
+                
             </div>
             <!-- Third Row Ended -->
         </div>
