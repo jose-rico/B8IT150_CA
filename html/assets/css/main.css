@@ -1985,10 +1985,12 @@ opacity: 1
 table {
     border-collapse: collapse;
     width: 100%;
+    background-color: #34ebde;
+   
 }
 
 th, td {
     padding: 8px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border: 2px solid #04050a;
 }
