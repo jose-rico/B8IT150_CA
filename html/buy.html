@@ -137,6 +137,12 @@
                                 <div class="col-sm-6 form-group">
                                     <input class="form-control" type="text" name="ugroupset" id="ugroupset">
                                 </div>
+                                <div class="col-sm-6 form-group">
+                                    <input class="form-control" type="text" name="usize" id="usize">
+                                </div>
+                                <div class="col-sm-6 form-group">
+                                    <input class="form-control" type="text" name="uprice" id="uprice">
+                                </div>
 
                                 <button class="btn btn-default pull-left" id='delb'>Delete</button>
                                 <label for="id"></label>
@@ -282,7 +288,7 @@
         baseURL = 'https://jose.dbsprojects.ie:8080/';
 
         let updStudent = () => {
-            fetch(baseURL + 'update?id=' + uid.value + '&bike=' + ubike.value + '&wheels=' + uwheels.value + '&groupset=' + ugroupset.value).then((resp) => { alert("Bike Updated"); }
+            fetch(baseURL + 'update?id=' + uid.value + '&bike=' + ubike.value + '&wheels=' + uwheels.value + '&groupset=' + ugroupset.value + '&size=' + usize.value + '&price=' + uprice.value).then((resp) => { alert("Bike Updated"); }
             );
         }
     </script>

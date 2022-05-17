@@ -19,8 +19,10 @@ def add():
   bike = request.args.get('bike')
   wheels = request.args.get('wheels')
   groupset = request.args.get('groupset')
+  size = request.args.get('size')
+  price = request.args.get('price')
   cur = mysql.connection.cursor() #create a connection to the SQL instance
-  s='''INSERT INTO bikes(bike, wheels, groupset) VALUES('{}','{}','{}');'''.format(bike,wheels,groupset)
+  s='''INSERT INTO bikes(bike, wheels, groupset, size, price) VALUES('{}','{}','{}','{}','{}');'''.format(bike,wheels,groupset,size,price)
   cur.execute(s)
   mysql.connection.commit()
   return '{"Result":"Success"}'
@@ -39,10 +41,12 @@ def update():
   bike = request.args.get('bike')
   wheels = request.args.get('wheels')
   groupset = request.args.get('groupset')
+  size = request.args.get('size')
+  price = request.args.get('price')
   id = request.args.get('id')
   cur = mysql.connection.cursor() #create a connection to the SQL instance
-  s='''UPDATE bikes SET bike=%s, wheels=%s, groupset=%s WHERE bikeID=%s;'''
-  cur.execute(s, (bike, wheels, groupset, id))
+  s='''UPDATE bikes SET bike=%s, wheels=%s, groupset=%s, size=%s, price=%s WHERE bikeID=%s;'''
+  cur.execute(s, (bike, wheels, groupset, size, price, id))
   mysql.connection.commit()
   return '{"Result":"Success"}'
 
@@ -59,7 +63,9 @@ def hello(): # Name of the method
     Result['Bike']=row[0]#.replace('\n',' ') by disbling this it will handle records with no name add some javascritpt not allowing to insert null values!!!
     Result['Wheels']=row[1]
     Result['Groupset']=row[2]
-    Result['ID']=row[3]
+    Result['Size']=row[3]
+    Result['Price']=row[4]
+    Result['ID']=row[5]
     Results.append(Result)
   response={'Results':Results, 'count':len(Results)}
   ret=app.response_class(
