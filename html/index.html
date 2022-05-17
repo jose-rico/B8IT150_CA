@@ -43,8 +43,8 @@
                             let newRow = rows[0].cloneNode(true);
                             let divs = newRow.getElementsByTagName('td');
                             divs[0].innerHTML = x['ID'];
-                            divs[1].innerHTML = x['Name'];
-                            divs[2].innerHTML = x['Email'];
+                            divs[1].innerHTML = x['Bike'];
+                            divs[2].innerHTML = x['Wheels'];
                             divs[3].innerHTML = x['Groupset'];
                             tab1.appendChild(newRow);
                         }
@@ -147,7 +147,7 @@
 
                 <table id='tab1' bgcolor='#34ebde' style="display: none">
 
-                    <tr><td>ID</td><td>Name</td><td>Email</td><td>Groupset</td></tr>
+                    <tr><td>ID</td><td>Bike</td><td>Wheels</td><td>Groupset</td></tr>
                 </table>
 
             </div>

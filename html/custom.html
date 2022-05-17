@@ -133,10 +133,10 @@
 
 
                             <div class="col-sm-6 form-group">
-                                <input class="form-control" type="text" id="name" value="name">
+                                <input class="form-control" type="text" id="bike" value="bike">
                             </div>
                             <div class="col-sm-6 form-group">
-                                <input class="form-control" type="email" id="email" value="email">
+                                <input class="form-control" type="email" id="wheels" value="wheels">
                             </div>
                             <div class="col-sm-6 form-group">
                                 <input class="form-control" type="text" id="groupset" value="groupset">
@@ -268,11 +268,11 @@
     <script>
         baseURL = 'https://jose.dbsprojects.ie:8080/';
         let addButton = document.getElementById('adlb');
-        let name = document.getElementById('name');
-        let email = document.getElementById('email');
+        let bike = document.getElementById('bike');
+        let wheels = document.getElementById('wheels');
         let groupset = document.getElementById('groupset');
         let addStudent = () => {
-            fetch(baseURL + 'add?name=' + document.getElementById('name').value + '&email=' + document.getElementById('email').value + '&groupset=' + document.getElementById('groupset').value).then((resp) => {
+            fetch(baseURL + 'add?bike=' + document.getElementById('bike').value + '&wheels=' + document.getElementById('wheels').value + '&groupset=' + document.getElementById('groupset').value).then((resp) => {
                 alert("Bike Added");
             }
             );

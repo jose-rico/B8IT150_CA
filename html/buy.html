@@ -129,10 +129,10 @@
                                     <input class="form-control" type="text" name="uid" id="uid">
                                 </div>
                                 <div class="col-sm-6 form-group">
-                                    <input class="form-control" type="text" name="uname" id="uname">
+                                    <input class="form-control" type="text" name="ubike" id="ubike">
                                 </div>
                                 <div class="col-sm-6 form-group">
-                                    <input class="form-control" type="text" name="uemail" id="uemail">
+                                    <input class="form-control" type="text" name="uwheels" id="uwheels">
                                 </div>
                                 <div class="col-sm-6 form-group">
                                     <input class="form-control" type="text" name="ugroupset" id="ugroupset">
@@ -282,7 +282,7 @@
         baseURL = 'https://jose.dbsprojects.ie:8080/';
 
         let updStudent = () => {
-            fetch(baseURL + 'update?id=' + uid.value + '&name=' + uname.value + '&email=' + uemail.value + '&groupset=' + ugroupset.value).then((resp) => { alert("Bike Updated"); }
+            fetch(baseURL + 'update?id=' + uid.value + '&bike=' + ubike.value + '&wheels=' + uwheels.value + '&groupset=' + ugroupset.value).then((resp) => { alert("Bike Updated"); }
             );
         }
     </script>
