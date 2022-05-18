@@ -34,7 +34,7 @@
     <script>
         let doIt = () => {
             let tab = document.getElementById("tab2");
-            let rows = tab1.getElementsByTagName('tr');
+            let rows = tab2.getElementsByTagName('tr');
             fetch('https://jose.dbsprojects.ie:8080/')
                 .then(response => response.json())
                 .then(data => {
@@ -45,10 +45,10 @@
                             divs[0].innerHTML = x['ID'];
                             divs[1].innerHTML = x['Customer'];
                             divs[2].innerHTML = x['Email'];
-                            tab1.appendChild(newRow);
+                            tab2.appendChild(newRow);
                         }
                     );
-                    tab1.setAttribute("style", "\"\"");
+                    tab2.setAttribute("style", "\"\"");
                 }
                 );
         }
