@@ -2,11 +2,11 @@
 <html lang="en">
 <!--Entry Point:index.html - CA_ONE B8IT150 - Student Jose Maria Rico Leal (10539218) -->
 <head>
-    <title>Custom | Cool Bikes Ltd</title>
+    <title>Buy | Cool Bikes Ltd</title>
     <!-- SEO meta tags -->
-    <meta name="description" content="Customise your bike, all parts to build up a unique bike.">
-    <meta name="keywords" content="Bikes, bike, single, speed, fixie, spare, tube, tyre, cheap, repair, service">
-    <meta name="og:title" property="og:title" content="Cool Bikes Ltd">
+    <meta name="description" content="Algunos ejemplos de proyectos ya ejecutados, pide presupesto sin compromiso nosotros te asesoramos">
+    <meta name="keywords" content="servicio, servicios, alicatado, alicatados, baño, baños, cocina, cocinas, gres, azulejo, pavés, caseta, campo, piscina">
+    <meta name="og:title" property="og:title" content="Construcciones Manin">
     <meta property="og:locale" content="en_EN" />
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -31,6 +31,29 @@
     <link rel="icon" type="image/png" href="assets/favicon/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="assets/favicon/favicon-16x16.png" sizes="16x16" />
     <link rel="icon" type="image/png" href="assets/favicon/favicon.ico" sizes="128x128" />
+    <script>
+        let doIt = () => {
+            let tab = document.getElementById("tab2");
+            let rows = tab1.getElementsByTagName('tr');
+            fetch('https://jose.dbsprojects.ie:8080/')
+                .then(response => response.json())
+                .then(data => {
+                    data.Results.forEach(
+                        x => {
+                            let newRow = rows[0].cloneNode(true);
+                            let divs = newRow.getElementsByTagName('td');
+                            divs[0].innerHTML = x['ID'];
+                            divs[1].innerHTML = x['Customer'];
+                            divs[2].innerHTML = x['Email'];
+                            tab1.appendChild(newRow);
+                        }
+                    );
+                    tab1.setAttribute("style", "\"\"");
+                }
+                );
+        }
+
+    </script>
 </head>
 
 <body>
@@ -68,20 +91,20 @@
                     <li class="nav-item">
                         <span class="hidden" href="#">/</span>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="custom.html">Custom</a>
+                    </li>
+                    <li class="nav-item">
+                        <span class="hidden" href="#">/</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="custom.html">Buy</a>
+                    </li>
+                    <li class="nav-item">
+                        <span class="hidden" href="#">/</span>
+                    </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="custom.html">Custom<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <span class="hidden" href="#">/</span>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="buy.html">Buy </a>
-                    </li>
-                    <li class="nav-item">
-                        <span class="hidden" href="#">/</span>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="customers.html">Customers </a>
+                        <a class="nav-link" href="buy.html">Customers<span class="sr-only">(current)</span> </a>
                     </li>
                     <li class="nav-item">
                         <span class="hidden" href="#">/</span>
@@ -100,7 +123,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-12">
-                    <h1>Custom</h1>
+                    <h1>Customers</h1>
                 </div>
 
             </div>
@@ -111,57 +134,39 @@
     <section id="services">
         <!-- Container Start -->
         <div class="container">
-            <!-- First Row Start -->
-            <div class="row main-content" data-aos="fade-up" data-aos-duration="500">
-
-
-            </div>
-            <!-- First Row Ended -->
-            <!-- Second Row Start -->
-            <div class="row main-content" data-aos="fade-up" data-aos-duration="500">
-
-            </div>
-            <!-- Second Row Ended -->
             <!-- Third Row Start -->
             <div class="row main-content" data-aos="fade-up" data-aos-duration="500">
 
-            </div>
-            <form action="index.html" id="contact-form" method="get">
-                <section id="contact-page">
-                    <div class="container">
-                        <div class="col-12 col-lg-12 col-xl-8" id="contact-form-1" method="get">
-                            <!--Adding records-->
-                            <button class="btn btn-default pull-left" id='adlb' onclick="print_out_error()">Add</button>
-                            <br /><br /><br /><br />
-                            <label for="id"></label>
-                            <br>
-                            <p>Add a record here:</p>
+                <!--Updating records-->
+              
+                
+                    <section id="contact-page">
+                        <div class="container">
+                            <div class="col-12 col-lg-12 col-xl-8">
 
 
-                            <div class="col-sm-6 form-group">
-                                <input class="form-control" type="text" id="bike" value="bike">
-                            </div>
-                            <div class="col-sm-6 form-group">
-                                <input class="form-control" type="email" id="wheels" value="wheels">
-                            </div>
-                            <div class="col-sm-6 form-group">
-                                <input class="form-control" type="text" id="groupset" value="groupset">
-                            </div>
-                            <div class="col-sm-6 form-group">
-                                <input class="form-control" type="text" id="size" value="size">
-                            </div>
-                            <div class="col-sm-6 form-group">
-                                <input class="form-control" type="text" id="price" value="price">
-                            </div>
+
+                                <div class="col-12 col-lg-12 col-xl-8">
+                                    <button class="btn btn-default pull-left" onClick="doIt()">Press me</button>
+                                    <button class="btn btn-default pull-left" onClick="window.location.reload();">Clean Table</button>
+                                </div>
+
+                                <br /><br /><br /><br />
+                                <p>These are our customers:</p> <br />
 
 
-                            <BR />
+                                <table id='tab2' style="display: none">
+
+                                    <tr><td>ID</td><td>Customer</td><td>Email</td></tr>
+                                </table>
+
+                            </div>
                         </div>
-                    </div>
 
-                </section>
-            </form>
-                <!-- Third Row Ended -->
+                    </section>
+                
+            </div>
+            <!-- Third Row Ended -->
         </div>
         <!-- Container Ended -->
     </section>
@@ -274,24 +279,27 @@
     <!-- Custom JavaScript -->
     <script src="assets/js/animate.js"></script>
     <script src="assets/js/custom.js"></script>
-    <script src="assets/js/main.js"></script>
-
-    <!--Script adding records-->
+    <!--Script deleting records-->
+    <script>
+        baseURL = 'https://jose.dbsprojects.ie:8080/'
+        let delButton = document.getElementById('delb');
+        let deleteStudent = (event) => {
+            let id = document.getElementById('id').value;
+            fetch(baseURL + 'delete?id=' + id).then((resp) => {
+                alert("Bike Deleted");//Obviously check success first
+            });
+        }
+        delButton.addEventListener("click", deleteStudent);
+    </script>
+    <!--Script updating records-->
     <script>
         baseURL = 'https://jose.dbsprojects.ie:8080/';
-        let addButton = document.getElementById('adlb');
-        let bike = document.getElementById('bike');
-        let wheels = document.getElementById('wheels');
-        let groupset = document.getElementById('groupset');
-        let addStudent = () => {
-            fetch(baseURL + 'add?bike=' + document.getElementById('bike').value + '&wheels=' + document.getElementById('wheels').value + '&groupset=' + document.getElementById('groupset').value + '&size=' + document.getElementById('size').value + '&price=' + document.getElementById('price').value).then((resp) => {
-                alert("Bike Added");
-            }
+
+        let updStudent = () => {
+            fetch(baseURL + 'update?id=' + uid.value + '&bike=' + ubike.value + '&wheels=' + uwheels.value + '&groupset=' + ugroupset.value + '&size=' + usize.value + '&price=' + uprice.value).then((resp) => { alert("Bike Updated"); }
             );
         }
-        addButton.addEventListener("click", addStudent);
     </script>
-
 </body>
 
 </html>
