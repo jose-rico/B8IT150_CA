@@ -32,7 +32,7 @@
     <link rel="icon" type="image/png" href="assets/favicon/favicon-16x16.png" sizes="16x16" />
     <link rel="icon" type="image/png" href="assets/favicon/favicon.ico" sizes="128x128" />
     <script>
-        let doIT = () => {
+        let doIt = () => {
             let tab = document.getElementById("tab2");
             let rows = tab1.getElementsByTagName('tr');
             fetch('https://jose.dbsprojects.ie:8080/')
@@ -147,7 +147,7 @@
 
 
                                 <div class="col-12 col-lg-12 col-xl-8">
-                                    <button class="btn btn-default pull-left" onClick="doIT()">Press me</button>
+                                    <button class="btn btn-default pull-left" onClick="doIt()">Press me</button>
                                     <button class="btn btn-default pull-left" onClick="window.location.reload();">Clean Table</button>
                                 </div>
 
@@ -280,26 +280,7 @@
     <script src="assets/js/animate.js"></script>
     <script src="assets/js/custom.js"></script>
     <!--Script deleting records-->
-    <script>
-        baseURL = 'https://jose.dbsprojects.ie:8080/'
-        let delButton = document.getElementById('delb');
-        let deleteStudent = (event) => {
-            let id = document.getElementById('id').value;
-            fetch(baseURL + 'delete?id=' + id).then((resp) => {
-                alert("Bike Deleted");//Obviously check success first
-            });
-        }
-        delButton.addEventListener("click", deleteStudent);
-    </script>
-    <!--Script updating records-->
-    <script>
-        baseURL = 'https://jose.dbsprojects.ie:8080/';
-
-        let updStudent = () => {
-            fetch(baseURL + 'update?id=' + uid.value + '&bike=' + ubike.value + '&wheels=' + uwheels.value + '&groupset=' + ugroupset.value + '&size=' + usize.value + '&price=' + uprice.value).then((resp) => { alert("Bike Updated"); }
-            );
-        }
-    </script>
+    
 </body>
 
 </html>
