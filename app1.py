@@ -11,7 +11,7 @@ CORS(app)
 app.config['MYSQL_USER'] = 'web'
 app.config['MYSQL_PASSWORD'] = 'webPass'
 app.config['MYSQL_DB'] = 'bike'
-app.config['MYSQL_HOST'] = 'domain' #for now
+app.config['MYSQL_HOST'] = 'localhost' #for now
 mysql.init_app(app)
 
 @app.route("/") #Default - Show Data
@@ -35,5 +35,5 @@ def hello(): # Name of the method
   )
   return ret #Return the data in a string format
 if __name__ == "__main__":
-  app.run(host='0.0.0.0',port='8081') #Run the flask app at port 8080
+  app.run(host='0.0.0.0',port='8081', ssl_context=('/home/jose/cert.pem', '/home/jose/privkey.pem')) #Run the flask app at port 8080
 
