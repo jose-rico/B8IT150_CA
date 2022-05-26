@@ -11,7 +11,7 @@ CORS(app)
 app.config['MYSQL_USER'] = 'web'
 app.config['MYSQL_PASSWORD'] = 'webPass'
 app.config['MYSQL_DB'] = 'bike'
-app.config['MYSQL_HOST'] = 'localhost' #for now
+app.config['MYSQL_HOST'] = 'domain' #for now
 mysql.init_app(app)
 
 @app.route("/") #Default - Show Data
