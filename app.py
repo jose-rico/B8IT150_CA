@@ -76,6 +76,9 @@ def hello(): # Name of the method
     mimetype='application/json'
   )
   return ret #Return the data in a string format
+if __name__ == "__main__":
+ app.run(host='0.0.0.0',port='8080', ssl_context=('/home/jose/cert.pem', '/home/jose/privkey.pem')) #Run the flask app at port 8080
+
 def hello(): # Name of the method
   cur = mysql.connection.cursor() #create a connection to the SQL instance
   cur.execute('''SELECT * FROM customers''') # execute an SQL statment
