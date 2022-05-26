@@ -35,7 +35,7 @@
         let doIT = () => {
             let tab = document.getElementById("tab2");
             let rows = tab2.getElementsByTagName('tr');
-            fetch('https://jose.dbsprojects.ie:8080/')
+            fetch('https://jose.dbsprojects.ie:8081/')
                 .then(response => response.json())
                 .then(data => {
                     data.Results.forEach(
