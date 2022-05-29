@@ -114,37 +114,36 @@
                             width="600" height="850" frameborder="0" style="width: 100%;height: 100%; border:0" allowfullscreen></iframe>
                 </div>
                 <div class="col-12 col-lg-12 col-xl-8">
-                    <p>
-                        Póngase en contacto con nosotros ¡Estaremos encantados de atenderle!<br>
-                        Tan pronto recibamos tu mensaje en 24h te contactaremos.<br>
-                        English? Don't be afraid to submit your query or call Jose at 602 21 96 53, Cheers!
+                    <p >
+                        Submit your query, we will advise you building up your dream bike!<br>
+                        Once we get your email, we will get back to you within 24 hours.<br>
                     </p>
                     <form action="https://formsubmit.co/1815086fbc5d136626633bdaf05a8141" id="contact-form" method="POST">
 
                         <div class="row">
                             <div class="col-sm-6 form-group">
-                                <input class="form-control" name="Nombre" type="text" id="first_name" placeholder="Escribe tu nombre...">
+                                <input class="form-control" name="Name" type="text" id="first_name" placeholder="Your name...">
                             </div>
                             <div class="col-sm-6 form-group">
-                                <input class="form-control" name="Correo electrónico" type="email" id="email" placeholder="Escribe tu correo...">
+                                <input class="form-control" name="Email" type="email" id="email" placeholder="Your email...">
                             </div>
                             <div class="col-sm-12 form-group">
-                                <input class="form-control" name="Numero de teléfono" type="number" id="contact_number" placeholder="eg. 6xx xx xx xx" min="9">
+                                <input class="form-control" name="Mobile_Number" type="number" id="contact_number" placeholder="eg. 089 xxx xxxx" min="10">
                             </div>
                         </div>
-                        <textarea class="form-control" id="comments" name="comments" placeholder="Escribe tus comentarios" rows="7"></textarea><br>
+                        <textarea class="form-control" id="comments" name="comments" placeholder="Your message" rows="7"></textarea><br>
                         <div class="row">
                             <div class="col-sm-12 form-group">
-                                <button class="btn btn-default pull-left" type="submit" value="Enviar" onclick="print_out_error()">Enviar</button>
+                                <button class="btn btn-default pull-left" type="submit" value="Submit" onclick="print_out_error()">Submit</button>
                             </div>
                             <br>
                             <div class="col-sm-12 form-group">
-                                <button class="btn btn-default pull-left" type="reset" value="Limpiar formulario">Limpiar formulario</button>
+                                <button class="btn btn-default pull-left" type="reset" value="Clean">Clean</button>
                             </div>
                             <br>
                             <div class="col-sm-12 form-group">
-                                <p id="error-list"> Numero (<span id="error-count"></span>) errores</p>
-                                <span id="fail-message"></span>
+                                <p1 id="error-list"> Error number (<span id="error-count"></span>)</p1>
+                                 <p1><span id="fail-message"></span></p1>
                             </div>
                         </div>
                         <input type="hidden" name="_captcha" value="false">

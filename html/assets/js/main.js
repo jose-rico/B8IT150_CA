@@ -72,9 +72,9 @@ $(document).ready(function() {
             message = message.substring(0,n); 
 
             document.querySelector('#fail-message').innerHTML =
-                'Por favor rellena tus datos ' +
+                'Please fill up your details ' +
                 message +
-                ' los necesitamos para contactarte ;)!!!';
+                ' we need them to contact you ;)!!!';
 }
 
 
