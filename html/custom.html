@@ -142,7 +142,7 @@
                                 <input class="form-control" type="text" id="bike" value="bike">
                             </div>
                             <div class="col-sm-6 form-group">
-                                <input class="form-control" type="email" id="wheels" value="wheels">
+                                <input class="form-control" type="text" id="wheels" value="wheels">
                             </div>
                             <div class="col-sm-6 form-group">
                                 <input class="form-control" type="text" id="groupset" value="groupset">
@@ -283,13 +283,13 @@
         let bike = document.getElementById('bike');
         let wheels = document.getElementById('wheels');
         let groupset = document.getElementById('groupset');
-        let addStudent = () => {
+        let addSBike = () => {
             fetch(baseURL + 'add?bike=' + document.getElementById('bike').value + '&wheels=' + document.getElementById('wheels').value + '&groupset=' + document.getElementById('groupset').value + '&size=' + document.getElementById('size').value + '&price=' + document.getElementById('price').value).then((resp) => {
                 alert("Bike Added");
             }
             );
         }
-        addButton.addEventListener("click", addStudent);
+        addButton.addEventListener("click", addBike);
     </script>
 
 </body>
