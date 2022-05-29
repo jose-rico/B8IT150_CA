@@ -283,6 +283,8 @@
         let bike = document.getElementById('bike');
         let wheels = document.getElementById('wheels');
         let groupset = document.getElementById('groupset');
+        let size = document.getElementById('size');
+        let price = document.getElementById('price');
         let addStudent = () => {
             fetch(baseURL + 'add?bike=' + document.getElementById('bike').value + '&wheels=' + document.getElementById('wheels').value + '&groupset=' + document.getElementById('groupset').value + '&size=' + document.getElementById('size').value + '&price=' + document.getElementById('price').value).then((resp) => {
                 alert("Bike Added");
