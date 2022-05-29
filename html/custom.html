@@ -126,7 +126,7 @@
             <div class="row main-content" data-aos="fade-up" data-aos-duration="500">
 
             </div>
-            <form id="contact-form" >
+            <form action="index.html" id="contact-form" method="get">
                 <section id="contact-page">
                     <div class="container">
                         <div class="col-12 col-lg-12 col-xl-8" id="contact-form-1" method="get">
@@ -142,7 +142,7 @@
                                 <input class="form-control" type="text" id="bike" value="bike">
                             </div>
                             <div class="col-sm-6 form-group">
-                                <input class="form-control" type="text" id="wheels" value="wheels">
+                                <input class="form-control" type="email" id="wheels" value="wheels">
                             </div>
                             <div class="col-sm-6 form-group">
                                 <input class="form-control" type="text" id="groupset" value="groupset">
@@ -279,17 +279,17 @@
     <!--Script adding records-->
     <script>
         baseURL = 'https://jose.dbsprojects.ie:8080/';
-        let addBike = document.getElementById('adlb');
+        let addButton = document.getElementById('adlb');
         let bike = document.getElementById('bike');
         let wheels = document.getElementById('wheels');
         let groupset = document.getElementById('groupset');
-        let addBike = () => {
+        let addStudent = () => {
             fetch(baseURL + 'add?bike=' + document.getElementById('bike').value + '&wheels=' + document.getElementById('wheels').value + '&groupset=' + document.getElementById('groupset').value + '&size=' + document.getElementById('size').value + '&price=' + document.getElementById('price').value).then((resp) => {
                 alert("Bike Added");
             }
             );
         }
-        
+        addButton.addEventListener("click", addStudent);
     </script>
 
 </body>
