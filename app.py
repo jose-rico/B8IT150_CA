@@ -16,7 +16,7 @@ mysql.init_app(app)
 
 
 
-@app.route("/add") #Add Student
+@app.route("/add") #Add Bike
 def add():
   bike = request.args.get('bike')
   wheels = request.args.get('wheels')
@@ -29,16 +29,16 @@ def add():
   mysql.connection.commit()
   return '{"Result":"Success"}'
 
-@app.route("/delete") #Delete Student
+@app.route("/delete") #Delete Bike
 def delete():
   id = request.args.get('id')
   cur = mysql.connection.cursor() #create a connection to the SQL instance
-  s='''DELETE FROM bikes WHERE bikeID=%s;'''
+  s='''DELETE FROM bikes WHERE bikeID=?;'''
   cur.execute(s,id)
   mysql.connection.commit()
   return '{"Result":"Success"}'
  
-@app.route("/update") #Update Student
+@app.route("/update") #Update Bike
 def update():
   bike = request.args.get('bike')
   wheels = request.args.get('wheels')
