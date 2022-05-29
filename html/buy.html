@@ -126,7 +126,7 @@
                                 <label for='updateID'></label>
                                 <br>
 
-                                <button class="btn btn-default pull-left" onClick="updBike()"> Click to update </button>
+                                <button class="btn btn-default pull-left" onClick="updStudent()"> Click to update </button>
                                 <br /><br /><br />
                                 <p>Add a record here:</p>
 
@@ -293,7 +293,7 @@
     <script>
         baseURL = 'https://jose.dbsprojects.ie:8080/';
 
-        let updBike = () => {
+        let updStudent = () => {
             fetch(baseURL + 'update?id=' + uid.value + '&bike=' + ubike.value + '&wheels=' + uwheels.value + '&groupset=' + ugroupset.value + '&size=' + usize.value + '&price=' + uprice.value).then((resp) => { alert("Bike Updated"); }
             );
         }
