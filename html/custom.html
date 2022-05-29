@@ -131,7 +131,7 @@
                     <div class="container">
                         <div class="col-12 col-lg-12 col-xl-8" id="contact-form-1" method="get">
                             <!--Adding records-->
-                            <button class="btn btn-default pull-left" id='adlb' onclick="">Add</button>
+                            <button class="btn btn-default pull-left" id='adlb'>Add</button>
                             <br /><br /><br /><br />
                             <label for="id"></label>
                             <br>
@@ -283,13 +283,13 @@
         let bike = document.getElementById('bike');
         let wheels = document.getElementById('wheels');
         let groupset = document.getElementById('groupset');
-        let addStudent = () => {
+        let addBike = () => {
             fetch(baseURL + 'add?bike=' + document.getElementById('bike').value + '&wheels=' + document.getElementById('wheels').value + '&groupset=' + document.getElementById('groupset').value + '&size=' + document.getElementById('size').value + '&price=' + document.getElementById('price').value).then((resp) => {
                 alert("Bike Added");
             }
             );
         }
-        addButton.addEventListener("click", addStudent);
+        addButton.addEventListener("click", addBike);
     </script>
 
 </body>
