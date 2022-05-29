@@ -33,12 +33,12 @@ def add():
 def delete():
   id = request.args.get('id')
   cur = mysql.connection.cursor() #create a connection to the SQL instance
-  s='''DELETE FROM bikes WHERE bikeID=?;'''
+  s='''DELETE FROM bikes WHERE bikeID=%%s;'''
   cur.execute(s,id)
   mysql.connection.commit()
   return '{"Result":"Success"}'
  
-@app.route("/update") #Update Bike
+@app.route("/update") #Update 
 def update():
   bike = request.args.get('bike')
   wheels = request.args.get('wheels')
