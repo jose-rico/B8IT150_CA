@@ -281,13 +281,13 @@
         baseURL = 'https://jose.dbsprojects.ie:8080/';
         let addButton = document.getElementById('adlb');
         
-        let addStudent = () => {
+        let addBike = () => {
             fetch(baseURL + 'add?bike=' + document.getElementById('bike').value + '&wheels=' + document.getElementById('wheels').value + '&groupset=' + document.getElementById('groupset').value + '&size=' + document.getElementById('size').value + '&price=' + document.getElementById('price').value).then((resp) => {
                 alert("Bike Added");
             }
             );
         }
-        addButton.addEventListener("click", addStudent);
+        addButton.addEventListener("click", addBike);
     </script>
 
 </body>
