@@ -20,3 +20,5 @@ Documentation: 20
 You must use public git (e.g. GitHub) to manage your source and versioning, with regular frequent commits. Git may be used to verify engagement, and failure to engage with source control may result in a zero grade.
 
 You must attribute all code not written from scratch, either in accordance with its licence, if applicable, or if not, #taken from ...  failure to do so may result in a zero grade.
+
+You may use any programming language, however example programs will be presented in Python, with some front-end JS.
