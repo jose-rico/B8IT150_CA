@@ -115,61 +115,61 @@
             <div class="row main-content" data-aos="fade-up" data-aos-duration="500">
 
                 <!--Updating records-->
-              
-                
-                    <section id="contact-page">
-                        <div class="container">
-                            <div class="col-12 col-lg-12 col-xl-8" id="contact-form-1" method="get">
-                                <!--Adding records-->
-
-                                <br /><br /><br /><br />
-                                <label for='updateID'></label>
-                                <br>
-
-                                <button class="btn btn-default pull-left" onClick="updStudent()"> Click to update </button>
-                                <br /><br /><br />
-                                <p>Add a record here:</p>
 
 
-                                <div class="col-sm-6 form-group">
-                                    <input class="form-control" type="text" name="uid" id="uid">
-                                </div>
-                                <div class="col-sm-6 form-group">
-                                    <input class="form-control" type="text" name="ubike" id="ubike">
-                                </div>
-                                <div class="col-sm-6 form-group">
-                                    <input class="form-control" type="text" name="uwheels" id="uwheels">
-                                </div>
-                                <div class="col-sm-6 form-group">
-                                    <input class="form-control" type="text" name="ugroupset" id="ugroupset">
-                                </div>
-                                <div class="col-sm-6 form-group">
-                                    <input class="form-control" type="text" name="usize" id="usize">
-                                </div>
-                                <div class="col-sm-6 form-group">
-                                    <input class="form-control" type="text" name="uprice" id="uprice">
-                                </div>
+                <section id="contact-page">
+                    <div class="container">
+                        <div class="col-12 col-lg-12 col-xl-8" id="contact-form-1" method="get">
+                            <!--Adding records-->
 
-                                <button class="btn btn-default pull-left" id='delb'>Delete</button>
+                            <br /><br /><br /><br />
+                            <label for='updateID'></label>
+                            <br>
+
+                            <button type="submit" name="submit" class="btn btn-default pull-left" onClick="updStudent()"> Click to update </button>
+                            <br /><br /><br />
+                            <p>Add a record here:</p>
+
+
+                            <div class="col-sm-6 form-group">
+                                <input class="form-control" type="text" name="uid" id="uid" placeholder="Enter an ID">
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <input class="form-control" type="text" name="ubike" id="ubike" placeholder="Type a brand">
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <input class="form-control" type="text" name="uwheels" id="uwheels" placeholder="Your wheelset">
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <input class="form-control" type="text" name="ugroupset" id="ugroupset" placeholder="Change your groupset">
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <input class="form-control" type="text" name="usize" id="usize" placeholder="Type a size">
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <input class="form-control" type="text" name="uprice" id="uprice" placeholder="Ideally how much you'd like to pay">
+                            </div>
+
+                            <form name="form1" action="#" onsubmit="required()">
+                                <button type="submit" name="submit" class="btn btn-default pull-left" id='delb'>Delete</button>
                                 <label for="id"></label>
                                 <br /> <br /> <br /> <br />
                                 <div class="col-sm-6 form-group">
-                                    <input class="form-control" type="text" id="id" placeholder="Enter an ID">
+                                    <input name='text1' class="form-control" type="text" id="id" placeholder="Enter an ID">
                                 </div>
-
-                                <BR />
-                            </div>
+                            </form>
+                            <BR />
                         </div>
+                    </div>
 
-                    </section>
-                
+                </section>
+
             </div>
             <!-- Third Row Ended -->
         </div>
         <!-- Container Ended -->
     </section>
     <!-- Service section Ended -->
-
     <!-- Footer -->
     <footer class="page-footer">
 
@@ -284,18 +284,33 @@
         let deleteStudent = (event) => {
             let id = document.getElementById('id').value;
             fetch(baseURL + 'delete?id=' + id).then((resp) => {
-                alert("Bike Deleted");//Obviously check success first
+              
             });
         }
         delButton.addEventListener("click", deleteStudent);
     </script>
+    
     <!--Script updating records-->
     <script>
         baseURL = 'https://jose.dbsprojects.ie:8080/';
 
         let updStudent = () => {
-            fetch(baseURL + 'update?id=' + uid.value + '&bike=' + ubike.value + '&wheels=' + uwheels.value + '&groupset=' + ugroupset.value + '&size=' + usize.value + '&price=' + uprice.value).then((resp) => { alert("Bike Updated"); }
+            fetch(baseURL + 'update?id=' + uid.value + '&bike=' + ubike.value + '&wheels=' + uwheels.value + '&groupset=' + ugroupset.value + '&size=' + usize.value + '&price=' + uprice.value).then((resp) => { alert("Bike Updated") }
             );
+        }
+    </script>
+    <!--Piece of code taken from: JavaScript: HTML Form - checking for non empty field - www.w3resource.com/javascript/form/non-empty-field.php-->
+    <script>
+        function required() {
+            var empt = document.form1.text1.value;
+            if (empt === "") {
+                alert("Please input an existing ID");
+                return false;
+            }
+            else {
+                alert("Bike Deleted");
+                return true;
+            }
         }
     </script>
 </body>

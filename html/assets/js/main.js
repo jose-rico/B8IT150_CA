@@ -1,4 +1,4 @@
-/* Project: Web desing for Construcciones Manin, S.L - Author: Jose Maria Rico Leal - Javascript para el contact-form */
+/* JS - CA_ONE B8IT150 - Student Jose Maria Rico Leal (10539218)*/
 var form = document.getElementById("contact-form");
 
 

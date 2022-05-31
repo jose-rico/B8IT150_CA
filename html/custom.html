@@ -111,27 +111,19 @@
     <section id="services">
         <!-- Container Start -->
         <div class="container">
-            <!-- First Row Start -->
-            <div class="row main-content" data-aos="fade-up" data-aos-duration="500">
-
-
-            </div>
-            <!-- First Row Ended -->
-            <!-- Second Row Start -->
-            <div class="row main-content" data-aos="fade-up" data-aos-duration="500">
-
-            </div>
-            <!-- Second Row Ended -->
             <!-- Third Row Start -->
             <div class="row main-content" data-aos="fade-up" data-aos-duration="500">
 
-            </div>
-            <form  id="contact-form" >
+                <!--Updating records-->
+
+
                 <section id="contact-page">
                     <div class="container">
                         <div class="col-12 col-lg-12 col-xl-8" id="contact-form-1" method="get">
                             <!--Adding records-->
-                            <button class="btn btn-default pull-left"  onClick="addBike()">Add</button>
+
+
+                            <button class="btn btn-default pull-left" id='adlb'>Add</button>
                             <br /><br /><br /><br />
                             <label for="id"></label>
                             <br>
@@ -154,13 +146,13 @@
                                 <input class="form-control" type="text" id="price" value="price">
                             </div>
 
-
                             <BR />
                         </div>
                     </div>
 
                 </section>
-            </form>
+
+            </div>
             <!-- Third Row Ended -->
         </div>
         <!-- Container Ended -->
@@ -274,20 +266,20 @@
     <!-- Custom JavaScript -->
     <script src="assets/js/animate.js"></script>
     <script src="assets/js/custom.js"></script>
-    <script src="assets/js/main.js"></script>
+    
 
     <!--Script adding records-->
     <script>
         baseURL = 'https://jose.dbsprojects.ie:8080/';
-        
-        
+        let addButton = document.getElementById('adlb');
+
         let addBike = () => {
             fetch(baseURL + 'add?bike=' + document.getElementById('bike').value + '&wheels=' + document.getElementById('wheels').value + '&groupset=' + document.getElementById('groupset').value + '&size=' + document.getElementById('size').value + '&price=' + document.getElementById('price').value).then((resp) => {
                 alert("Bike Added");
             }
             );
         }
-       
+        addButton.addEventListener("click", addBike);
     </script>
 
 </body>
